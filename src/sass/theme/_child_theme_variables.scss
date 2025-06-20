@@ -1,0 +1,122 @@
+// Use this file to overwrite the basic Bootstrap variables and add your own variables
+// To overwrite a Bootstrap variable you don´t have to touch the Bootstrap folder.
+// Just copy a variable from src/sass/assets/bootstrap5/_variables.scss, paste it here and edit the value.
+
+$fxblue1: rgb(15, 62, 68);
+$fxblue2: rgb(59,134,143);
+$fxblue3: rgb(88,153,163);
+$fxblue4: rgb(116,172,184);
+$fxblue5: rgb(174,209,217);
+$fxblue6: rgb(232,220,204);
+
+$fxbkd1: rgb(40, 39, 42);
+
+$fxred1: rgb(122, 45, 0);
+$fxred2: rgb(160, 59, 0);
+$fxred3: rgb(199, 73, 0);
+
+$ash: rgb(172, 138, 91);
+$ash-hover: rgb(255, 208, 145);
+$ash2: rgb(163, 91, 73);
+
+$container-grad-gray-light:		linear-gradient(178deg, rgba(26,106,117,.1) 0%, rgb(30,30,30) 50%, rgb(30,30,30) 88%, rgb(90,40,40) calc(88% + 2px));
+$container-grad-gray-dark:		linear-gradient(178deg, rgba(26,106,117,.1) 0%, rgb(30,30,30) 50%, rgb(30,30,30) 88%, rgb(15,15,15) calc(88% + 2px));
+$container-grad-dark-light:		linear-gradient(178deg, rgb(15,15,15) 88%, rgb(40,40,40) calc(88% + 2px));
+$container-grad-light-dark:		linear-gradient(178deg, rgb(40,40,40) 88%, rgb(15,15,15) calc(88% + 2px));
+$container-grad-light-dark:		linear-gradient(178deg, rgb(40,40,40) 88%, rgb(15,15,15) calc(88% + 2px));
+
+$container-grad-gray-light-horiz:		linear-gradient(180deg, rgba(26,106,117,.1) 0%, rgb(30,30,30) 50%, rgb(30,30,30) 100%);
+$container-grad-gray-dark-horiz:		linear-gradient(180deg, rgba(26,106,117,.1) 0%, rgb(30,30,30) 50%, rgb(30,30,30) 100%);
+$container-grad-dark-light-horiz:		linear-gradient(180deg, rgb(15,15,15) 10%, rgb(40,40,40) );
+$container-grad-light-dark-horiz:		linear-gradient(180deg, rgb(40,40,40) 10%, rgb(15,15,15) );
+$container-grad-light-dark-horiz:		linear-gradient(180deg, rgb(40,40,40) 10%, rgb(15,15,15) );
+
+$container-grad-gray-footer:	linear-gradient(rgba(26,106,117,.1) 0%, rgb(30,30,30) 50%);
+$container-grad-dark-footer:	linear-gradient(rgb(15,15,15) 0%, rgb(30,30,30) 50%);
+
+
+$grad-blue-dark:	linear-gradient(rgba(26,106,117,.1) 0%, rgb(15,15,15) 95%);
+
+$icon-gradient1: linear-gradient($fxblue5 0%, $fxblue1 100%);
+$icon-gradient2: linear-gradient($fxred1 0%, $fxred2 100%);
+
+$primary: 				$fxblue3;
+$secondary:				$ash;
+$success: 				rgb(0, 120, 134);
+$bg-success: 			rgb(0, 120, 134);
+$tiertiary:				rgb(255, 217, 191);
+
+$info: 						rgb(0, 92, 102);
+$dark:						#333;
+$headings-margin-bottom:	20px ;
+
+$fxgray-bright:	 		rgb(40,40,40);
+$fxgray:	 			rgb(34,34,34);
+$fxgray-dark: 			rgb(15,15,15);
+$fxwhite-bright:	 	rgb(240,240,240);
+$fxwhite:	 			rgb(210,210,210);
+$fxwhite-dark:	 		rgb(200,200,200);
+
+$fxshadow1:		5px 5px 15px 0px rgba(0,0,0,.4);
+
+$fxshadow15:	5px 5px 15px 0px rgba(0,0,0,.4);
+$fxshadow15-7:	5px 5px 15px 0px rgba(0,0,0,1);
+
+$fxshadow30:	5px 5px 30px 0px rgba(0,0,0,.4);
+$fxshadow30-1:	5px 5px 30px 0px rgba(0,0,0,.1);
+
+$body-bg:				$fxgray;
+$body-color: 			#ddd;
+$form_entry:			#FFF;
+
+$font-family-base:		'Proxima Nova, sans-serif';
+$headings-font-weight:	700;
+
+//sets color for text in the navbar (dark version)
+$navbar-dark-color:		#EEE;
+
+.navbar-dark {
+	--bs-navbar-hover-color: rgb(59,134,143) !important;
+	--bs-nav-link-hover-color: rgb(59,134,143) !important;
+}
+
+//sets the color items in the dropdown menus
+$dropdown-link-color:	#EEE;
+
+$border-radius-lg:		10px;
+$alert-border-radius:	10px;
+
+$panel-border-color:	rgba(255, 204, 0, .3);
+
+$btn-border-width:		0;
+
+$badge-font-weight:   400;
+
+$checkout-form-background: rgb(11, 35, 37);
+$checkout-form-border: rgb(11, 81, 89);
+
+$gradient: linear-gradient(180deg, rgba(255,255,255,.5), rgba(255,255,255, 0));
+
+$watch-sidebar-text: #CCC;
+
+$wootab-border-color:	#777;
+
+// Override variables
+:root {
+	--hkb-header-style-bg: #333 !important;
+	--hkb-main-bg-color: rgb(30,30,30) !important;
+	--hkb-header-text-color: #BBB !important;
+	--hkb-link-color: rgba(206, 172, 0, .5) !important;
+}
+
+// Custom ratio added for 16x10
+// https://getbootstrap.com/docs/5.0/helpers/ratio/
+$aspect-ratios: (
+  "1x1": 100%,
+  "4x3": calc(3 / 4 * 100%),
+  "16x9": calc(9 / 16 * 100%),
+  "16x10": calc(9 / 10 * 100%),
+  "21x9": calc(9 / 21 * 100%)
+);
+
+
