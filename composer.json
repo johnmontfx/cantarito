@@ -16,8 +16,7 @@
     }
   ],
   "require": {
-    "timber/timber": "2.x-dev",
-    "twbs/bootstrap": "^5.3"
+    "timber/timber": "2.x-dev"
   },
   "require-dev": {
     "automattic/wordbless": "^0.4.2",

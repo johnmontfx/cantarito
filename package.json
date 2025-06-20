@@ -1,0 +1,60 @@
+{
+  "name": "cantarito",
+  "version": "1.0.0",
+  "description": "fxguide wordpress theme",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "bs": "browser-sync start --config src/build/browser-sync.config.js",
+    "css": "npm-run-all css-compile css-minify",
+    "css-compile": "sass --style expanded --source-map --embed-sources --no-error-css --quiet src/sass/child-theme.scss:css/child-theme.css src/sass/custom-editor-style.scss:css/custom-editor-style.css src/sass/child-admin-style.scss:css/child-admin.css ",
+    "css-minify": "cleancss -O1 --format breakWith=lf --with-rebase --source-map --source-map-inline-sources --output css/ --batch --batch-suffix \".min\" \"css/*.css\" \"!css/*.min.css\" \"!css/*rtl*.css\"",
+    "watch": "npm-run-all --parallel watch-run-*",
+    "watch-bs": "npm-run-all --parallel bs watch-run-*",
+    "watch-run-css": "nodemon --watch src/sass/ --ext scss --exec \"npm-run-all css\"",
+    "watch-run-js": "nodemon --watch src/js/ --ext js --exec \"npm-run-all js\"",
+    "copy-assets": "node src/build/copy-assets.js",
+    "dist": "npm-run-all --parallel css js",
+    "dist-build": "node src/build/dist-build.js",
+    "dist-clean": "node src/build/dist-clean.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/johnmontfx/cantarito.git"
+  },
+  "author": "John Montgomery",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/johnmontfx/cantarito/issues"
+  },
+  "homepage": "https://github.com/johnmontfx/cantarito#readme",
+  "dependencies": {
+    "bootstrap": "^5.3.7",
+    "magnific-popup": "^1.2.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.27.4",
+    "@babel/preset-env": "^7.27.2",
+    "@rollup/plugin-babel": "^6.0.4",
+    "@rollup/plugin-commonjs": "^28.0.6",
+    "@rollup/plugin-multi-entry": "^6.0.1",
+    "@rollup/plugin-node-resolve": "^16.0.1",
+    "@rollup/plugin-replace": "^6.0.2",
+    "autoprefixer": "^10.4.21",
+    "browser-sync": "^3.0.4",
+    "browserslist": "^4.25.0",
+    "clean-css-cli": "^5.6.3",
+    "del": "^8.0.0",
+    "nodemon": "^3.1.10",
+    "npm-run-all": "^4.1.5",
+    "popper.js": "^1.16.1",
+    "postcss": "^8.5.6",
+    "postcss-cli": "^11.0.1",
+    "rollup": "^4.44.0",
+    "sass": "^1.89.2",
+    "terser": "^5.43.1"
+  }
+}
