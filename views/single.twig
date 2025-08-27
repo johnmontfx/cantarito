@@ -3,37 +3,48 @@
 {% block content %}
 	<div class="content-wrapper">
 		<article class="post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
-			<img src="{{ post.thumbnail.src|resize(1200, 300) }}">
-			<section class="article-content">
-				<h1 class="article-h1">{{ post.title }}</h1>
-				<a href="{{ post.link }}">{{ _e('edit') }}</a>
-				<p class="blog-author">
-					<span>By</span><a href="{{post.author.path}}"> {{ post.author.name }} </a><span>&bull;</span> <time datetime="{{ post.date|date('Y-m-d H:i:s') }}">{{ post.date }}</time>
-				</p>
-				<div class="article-body">
-					{{post.content}}
+			<div class="row single-header">
+				<div class="col-md-7">
+					<img class="img-fluid img-single-featured" src="{{ post.thumbnail.src }}">
 				</div>
-			</section>
-
-			<!-- comment box -->
-			<section class="comment-box">
-				<!-- comments -->
-				<div class="comments">
-				    {% if post.comments %}
-					<h3> comments </h3>
-					{% for cmt in post.comments %}
-					    {% include "comment.twig" with {comment:cmt} %}
-					{% endfor %}
-				    {% endif %}
+				<div class="col-md-5 single-articleinfo">
+					<h1 class="single-h1">{{ post.title }}</h1>
+					<p class="blog-author">
+						<time datetime="{{ post.date|date('Y-m-d H:i:s') }}">{{ post.date }}</time>
+					</p>
+					<span class="single-post-type">{{post.type.labels.singular_name}}</span>
 				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-8 offset-md-2">
 
-				{% if post.comment_status == "closed" %}
-					<p> comments for this post are closed </p>
-				{% else %}
-				    <!-- comment form -->
-				    {% include "comment-form.twig" %}
-				{% endif %}
-			</section>
+					<section class="article-content">
+						<div class="article-body">
+							{{post.content}}
+						</div>
+					</section>
+
+					<!-- comment box -->
+					<section class="comment-box">
+						<!-- comments -->
+						<div class="comments">
+							{% if post.comments %}
+							<h3> comments </h3>
+							{% for cmt in post.comments %}
+								{% include "comment.twig" with {comment:cmt} %}
+							{% endfor %}
+							{% endif %}
+						</div>
+
+						{% if post.comment_status == "closed" %}
+							<p> comments for this post are closed </p>
+						{% else %}
+							<!-- comment form -->
+							{% include "comment-form.twig" %}
+						{% endif %}
+					</section>
+				</div>
+			</div>
 		</article>
 	</div><!-- /content-wrapper -->
 {% endblock %}
