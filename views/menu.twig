@@ -1,10 +1,9 @@
 {% if menu %}
-	<ul>
+	<div id="navbarNavDarkDropdown" class="navbar-collapse collapse">
+		<ul id="main-menu" class="navbar-nav navbar-dark ms-auto">
 	{% for item in items %}
-		<li class="{{ item.classes | join(' ') }}">
-			<a target="{{ item.target }}" href="{{ item.link }}">{{ item.title }}</a>
-			{% include "menu.twig" with {'items': item.children} %}
-		</li>
+			<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" class="menu-item nav-item"><a class="nav-link" title="ilm"  href="{{ item.link }}">{{ item.title }}</a></li>
 	{% endfor %}
-	</ul>
+		</ul>
+	</div>
 {% endif %}

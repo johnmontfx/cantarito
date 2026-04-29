@@ -1,0 +1,14 @@
+
+
+<div class="col-md-6">
+	<article id="post-{{ post.id }}" class="homecard-image">
+		{% block content %}
+			<a href="{{ post.link }}" title="">
+				<img class="featured-image" src="{{ post.thumbnail.src('hero') }}"">
+				<div class="home-tease-post-type">{{post.type.labels.singular_name}}</div>
+				<div class="title-teaseimg">{{ post.title }}</div>
+			</a>
+		{% endblock %}
+
+	</article>
+ </div>

@@ -1,0 +1,13 @@
+	<div id="fxCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="6000">
+		<div class="carousel-inner">
+			{% set active = 'active' %}
+			{% for post in posts %}
+				  <div class="carousel-item {{active}}">
+					  <div class="col-sm-3">
+						   <img class="img-fluid d-block w-100" src="{{ post.thumbnail.src('hero') }}" >
+					  </div>
+				  </div>
+				  {% set active = '' %}
+			{% endfor %}
+		</div>
+	</div>

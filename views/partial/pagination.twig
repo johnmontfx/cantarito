@@ -1,5 +1,6 @@
 {% if posts.pagination.pages is not empty %}
-    <nav class="pagination-block">
+<div class="row justify-content-center">
+    <div class="col-md-auto">
         <ul class="pagination">
 
             {# First #}
@@ -9,7 +10,7 @@
                 </li>
             {% else %}
                 <li class="first btn disabled">
-                    <button disabled>First</button>
+                    First
                 </li>
             {% endif %}
 
@@ -20,7 +21,7 @@
                 </li>
             {% else %}
                 <li class="prev btn disabled">
-                    <button disabled>Previous</button>
+                    Previous
                 </li>
             {% endif %}
 
@@ -28,11 +29,15 @@
             {% for page in posts.pagination.pages %}
                 {% if page.link %}
                     <li>
-                        <a href="{{ page.link }}" class="{{ page.class }}">{{ page.title }}</a>
+                        <a href="{{ page.link }}" class="btn {{ page.class }}">{{ page.title }}</a>
                     </li>
                 {% else %}
                     <li class="current">
-                        <span class="{{ page.class }}">{{ page.title }}</span>
+                        {% if page.class == 'dots' %}
+                            <span class="btn {{ page.class }}"><i class="fa-solid fa-ellipsis"></i></span>
+                        {% else %}
+                            <span class="btn {{ page.class }}">{{ page.title }}</span>
+                        {% endif %}
                     </li>
                 {% endif %}
             {% endfor %}
@@ -44,7 +49,7 @@
                 </li>
             {% else %}
                 <li class="next btn disabled">
-                    <button disabled>Next</button>
+                    Next
                 </li>
             {% endif %}
 
@@ -55,10 +60,11 @@
                 </li>
             {% else %}
                 <li class="last btn disabled">
-                    <button disabled>Last</button>
+                    Last
                 </li>
             {% endif %}
 
         </ul>
-    </nav>
+    </div>
+</div>
 {% endif %}

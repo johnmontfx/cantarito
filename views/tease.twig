@@ -1,9 +1,23 @@
-<article class="tease tease-{{post.type}}" id="tease-{{post.id}}">
-	{% block content %}
-		<h2 class="h2"><a href="{{post.link}}">{{post.title}}</a></h2>
-		<p>{{ post.excerpt }}</p>
-		{% if post.thumbnail %}
-			<img src="{{post.thumbnail.src}}" />
-		{% endif %}
-	{% endblock %}
-</article>
+
+
+<div class="col-md-4">
+	<article id="post-{{ post.id }}" class="homecard">
+		{% block content %}
+			<div class="homecard-tease-image">
+				<a href="{{ post.link }}" title=""><img class="featured-image" src="{{ post.thumbnail.src('hero') }}""></a>
+			</div>
+			{# <div class="article-meta">
+				{{post.type}}
+			</div> #}
+			<div class="excerpt">
+				<h5 class="post-title"><a href="{{ post.link }}" title="" rel="bookmark">{{ post.title }}</a></h5>
+				<p>{{ post.excerpt({ words: 100, read_more: false }) }}</p>
+				<a href="{{ post.link }}" class="read-more btn btn-sm btn-secondary" title="">read more</a>
+			</div>
+			{# <div class="home-social">
+				{{ function('fx_add_social_links', post.ID) }}
+			</div> #}
+		{% endblock %}
+
+	</article>
+ </div>
