@@ -1,6 +1,6 @@
 /*!
   * Cantarito  v1.0.0 (https://github.com/johnmontfx/cantarito#readme)
-  * Copyright 2013-2025 John Montgomery
+  * Copyright 2013-2026 John Montgomery
   * Licensed under ISC (undefined)
   */
 (function (global, factory) {
